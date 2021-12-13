@@ -1,4 +1,5 @@
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 function GuessedWords(props) {
   let contents;
@@ -19,8 +20,8 @@ function GuessedWords(props) {
     contents = (
       <div data-test="guessed-words">
         <h3>Guessed Words</h3>
-        <table>
-          <thead>
+        <table className='table table-sm'>
+          <thead className='thead-light'>
             <tr>
               <th>Guess</th>
               <th>Matching Letters</th>
