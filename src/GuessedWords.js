@@ -10,7 +10,9 @@ function GuessedWords(props) {
     )
   }
   return (
-  <div data-test="component-guessed-words"></div>
+  <div data-test="component-guessed-words">
+    {contents}
+  </div>
   );
 }
 GuessedWords.propTypes = {

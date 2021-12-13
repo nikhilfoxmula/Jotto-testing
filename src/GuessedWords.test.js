@@ -26,6 +26,6 @@ describe("if there are no words guessed", () => {
   });
   test("renders instructions to guess a word", () => {
     const instructions = findByTestAttr(wrapper, "guess-instructions");
-    expect(instructions.text().length).not.toBe(0);
+    expect(instructions.find('span').text().length).not.toBe(0);
   });
 });
