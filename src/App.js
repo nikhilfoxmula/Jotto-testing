@@ -1,14 +1,19 @@
-import React from 'react';
-import Congrats from './Congrats';
-import GuessedWords from './GuessedWords';
-import './App.css';
-
+import React from "react";
+import Congrats from "./Congrats";
+import GuessedWords from "./GuessedWords";
+import "./App.css";
+import Input from "./input";
 function App() {
+  const success = false;
+  const secretWord = "party";
+  const guessedWords = [];
+
   return (
-    <div className="container">
+    <div className="container" data-test="component-app">
       <h1>Jotto</h1>
-     <Congrats success={true}/>
-     <GuessedWords guessedWords={[{guessedWord:'train',letterMatchCount:3}]}/>
+      <Congrats success={success} />
+      <Input success={success} secretWord={secretWord} />
+      <GuessedWords guessedWords={guessedWords} />
     </div>
   );
 }
