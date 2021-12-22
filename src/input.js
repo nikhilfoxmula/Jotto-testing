@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const Input = ({ success, secretWord }) => {
   const [currentGuess, setCurrentGuess] = React.useState("");
-  console.log(secretWord);
+  // console.log(secretWord);
   if (success) {
     return <div data-test="component-input" />;
   }
@@ -34,6 +34,5 @@ const Input = ({ success, secretWord }) => {
 };
 Input.propTypes = {
   secretWord: PropTypes.string.isRequired,
-  success: PropTypes.string,
 };
 export default Input;
