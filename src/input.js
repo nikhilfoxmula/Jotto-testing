@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Input = ({ success,secretWord }) => {
+const Input = ({ success, secretWord }) => {
   const [currentGuess, setCurrentGuess] = React.useState("");
-
-  if(success){
-    return <div data-test="component-input"/>
+  console.log(secretWord);
+  if (success) {
+    return <div data-test="component-input" />;
   }
   return (
     <div data-test="component-input">
@@ -21,7 +21,10 @@ const Input = ({ success,secretWord }) => {
         <button
           data-test="submit-button"
           className="btn btn-primary mb-2"
-          onClick={(e)  =>{ e.preventDefault(); setCurrentGuess("")}}
+          onClick={(e) => {
+            e.preventDefault();
+            setCurrentGuess("");
+          }}
         >
           Submit
         </button>
@@ -31,5 +34,6 @@ const Input = ({ success,secretWord }) => {
 };
 Input.propTypes = {
   secretWord: PropTypes.string.isRequired,
+  success: PropTypes.string,
 };
 export default Input;

@@ -27,7 +27,7 @@ describe("get secret word", () => {
     mockGetSecretWord.mockClear();
     // using setProps because wrapper.update() doesn't trigger useEffect
     wrapper.setProps();
-    
+
     expect(mockGetSecretWord).toHaveBeenCalledTimes(0);
   });
 });
