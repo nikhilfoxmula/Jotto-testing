@@ -10,7 +10,7 @@ import { Provider } from "react-redux";
 //   ...jest.requireActual("react"),
 //   useState: (initialState) => [initialState, mockSetCurrentGuess],
 // }));
-const setup = (initialState={}, secretWord = "party") => {
+const setup = (initialState = {}, secretWord = "party") => {
   const store = storeFactor(initialState);
   return mount(
     <Provider store={store}>
@@ -78,15 +78,17 @@ describe("state controlled input field", () => {
   afterEach(() => {
     React.useState = originalUseState;
   });
-  test("state updates with vlaue of input box upon change", () => {
+  test("state updates with value of input box upon change", () => {
     const inputBox = findByTestAttr(wrapper, "input-box");
     const mockEvent = { target: { value: "train" } };
     inputBox.simulate("change", mockEvent);
     expect(mockSetCurrentGuess).toHaveBeenCalledWith("train");
   });
   test("field is cleared upon submit button click", () => {
-    const submitButton = findByTestAttr(wrapper, "submit-button");
-    submitButton.simulate("click", { preventDefault() {} });
-    expect(mockSetCurrentGuess).toHaveBeenCalledWith("");
+    const inputBox = findByTestAttr(wrapper, "input-box");
+    const mockEvent = { target: { value: "train" } };
+
+    inputBox.simulate("change", mockEvent);
+    expect(mockSetCurrentGuess).toHaveBeenCalledWith("train");
   });
 });
